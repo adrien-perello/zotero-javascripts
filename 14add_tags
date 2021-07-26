@@ -1,0 +1,12 @@
+const tags = ["tag1", "tag2", "tag3"];
+zoteroPane = Zotero.getActiveZoteroPane();
+items = zoteroPane.getSelectedItems();
+
+for (item of items) {
+    for (tag of tags) {
+        item.addTag(tag, 0);
+    }
+    await item.saveTx();
+}
+//alert("tags added")
+return "Tags added";
